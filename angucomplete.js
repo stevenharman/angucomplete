@@ -195,7 +195,7 @@ angular.module('angucomplete', [] )
         link: function($scope, elem, attrs, ctrl) {
 
             elem.bind("keyup", function (event) {
-                if(event.which === 40) {
+                if(event.which === 40) { // down-arrow
                     if (($scope.currentIndex + 1) < $scope.results.length) {
                         $scope.currentIndex ++;
                         $scope.$apply();
@@ -204,7 +204,7 @@ angular.module('angucomplete', [] )
                     }
 
                     $scope.$apply();
-                } else if(event.which == 38) {
+                } else if(event.which == 38) { // up-arrow
                     if ($scope.currentIndex >= 1) {
                         $scope.currentIndex --;
                         $scope.$apply();
@@ -212,7 +212,7 @@ angular.module('angucomplete', [] )
                         event.stopPropagation();
                     }
 
-                } else if (event.which == 13) {
+                } else if (event.which == 13) { // enter
                     if ($scope.currentIndex >= 0 && $scope.currentIndex < $scope.results.length) {
                         $scope.selectResult($scope.results[$scope.currentIndex]);
                         $scope.$apply();
@@ -225,16 +225,15 @@ angular.module('angucomplete', [] )
                         event.stopPropagation();
                     }
 
-                } else if (event.which == 27) {
+                } else if (event.which == 27) { // esc
                     $scope.results = [];
                     $scope.showDropdown = false;
                     $scope.$apply();
-                } else if (event.which == 8) {
+                } else if (event.which == 8) { // backspace
                     $scope.selectedObject = null;
                     $scope.$apply();
                 }
             });
-
 
         }
     };
