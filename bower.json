@@ -16,7 +16,12 @@
   "ignore": [
     "example",
     "bower_components",
-    "node_modules"
+    "node_modules",
+    "test",
+    ".gitignore",
+    ".jshintrc",
+    "Gruntfile.js",
+    "package.json"
   ],
   "dependencies": {
     "angular": ">=1.2.0"
